@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title></title>
+
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style >
+ body{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+ }
+ header{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }
+
+
+ .box{
+   background-color: white;
+   border: solid ;
+   width: 200px;
+   height: 200px;
+   text-align: center;
+   align-self: center;
+   color: #9a21bf;
+   font-size: 120px;
+
+ }
+ .text{
+   color: #9a21bf;
+   font-size: 24px;
+   text-align: center;
+
+ }
+
+ h1{
+   border-color: #9a21bf;
+   margin-bottom: 75px;
+   color: #9a21bf;
+ }
+
+</style>
+</head>
+<body onload="rand()">
+  <header>
+  <center><input type="text" id="result" class="text"> </center>
+
+    <div class="container ">
+      <div class="row">
+         <div class="col" >
+            <div class="text">Player1</div>
+              <center><input type="text" id="box1" class="box"> </center>
+          </div>
+          <div class="col">
+            <div class="text">Player2</div>
+              <center><input type="text" id="box2" class="box"> </center>
+          </div>
+        </div>
+      </div>
+
+  </header>
+
+<script>
+function rand() {
+var fp, sp;
+fp = Math.floor(Math.random() * 6) +1;
+sp = Math.floor(Math.random() * 6) +1;
+document.getElementById('box1').value = fp;
+document.getElementById('box2').value = sp;
+if (fp>sp) {
+  document.getElementById('result').value = "Player1 wins!!!";
+}else if (sp>fp) {
+  document.getElementById('result').value = "Player2 wins!!!";
+}else {
+  document.getElementById('result').value = "Draw!!!";
+}
+}
+</script>
+</body>
+
+</html>
